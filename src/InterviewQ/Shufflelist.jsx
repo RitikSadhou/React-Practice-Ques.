@@ -9,8 +9,9 @@ const Shufflelist = () => {
         const handleshuffle=()=>{
           const  shuffledItems =[...items];
           for (let i=shuffledItems.length-1;i>=0;i--){
-            let j=Math.floor(Math.random()*(i+1));
-            [shuffledItems[i], shuffledItems[j]]= [shuffledItems[j] , shuffledItems[i]];
+            for(let j=0; j<shuffledItems.length; j++){
+              [shuffledItems[i], shuffledItems[j]]= [shuffledItems[j] , shuffledItems[i]];
+     }
             }
             setitems(shuffledItems);
         }
